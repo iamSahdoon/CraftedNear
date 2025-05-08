@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Alice Johnson",
+    "email": "alice@example.com",
+    "password": "hashed_password_1",
+    "location": "New York, USA",
+    "points": 120,
+    "batch": "2025A",
+    "title": "pro"
+  },
+  {
+    "name": "Bob Smith",
+    "email": "bob@example.com",
+    "password": "hashed_password_2",
+    "location": "Los Angeles, USA",
+    "points": 50,
+    "batch": "2025B",
+    "title": "enthusiast"
+  },
+  {
+    "name": "Charlie Brown",
+    "email": "charlie@example.com",
+    "password": "hashed_password_3",
+    "location": "Chicago, USA",
+    "points": 200,
+    "batch": "2024A",
+    "title": "expert"
+  },
+  {
+    "name": "Diana Prince",
+    "email": "diana@example.com",
+    "password": "hashed_password_4",
+    "location": "London, UK",
+    "points": 10,
+    "batch": "2026A",
+    "title": "newbie"
+  },
+  {
+    "name": "Ethan Hunt",
+    "email": "ethan@example.com",
+    "password": "hashed_password_5",
+    "location": "Sydney, Australia",
+    "points": 75,
+    "batch": "2023B",
+    "title": "intermediate"
+  }
+]

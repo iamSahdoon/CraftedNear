@@ -1,0 +1,45 @@
+.stores-container {
+  background-color: #f5f2ea;
+  width: 100%;
+}
+.grid-products-profile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 44px;
+  max-width: 1245px;
+  margin: 0 auto;
+}
+
+.offer-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #403a34b0;
+  margin-bottom: 2px;
+  transition: all 0.2s ease;
+  width: 100%;
+  background-color: transparent;
+  cursor: pointer;
+}
+.offer-details:hover {
+  background-color: #4e372018;
+}
+.offer-details p {
+  padding: 5px 10px;
+}
+.offer-border {
+  border: 2px solid #403a34b0;
+}
+
+.grid-products-profile-offers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  gap: 68px;
+  max-width: 100%;
+  margin-left: 90px;
+  margin-right: 0px;
+}

@@ -1,0 +1,87 @@
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 63px 50px 77px;
+  font-family: "GT America Compressed";
+}
+
+.sort-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sort-wrapper p,
+.search-wrapper p {
+  font-family: "GT America Compressed";
+  color: #403a34;
+  font-size: 25px;
+}
+
+.dropdown-wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.city-dropdown,
+.category-dropdown {
+  padding: 8px 15px 6px 15px;
+  font-family: "GT America Condensed";
+  font-size: 18px;
+  color: #403a34;
+  border: 2px solid #403a34b7;
+  background-color: #f5f2ea;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 150px;
+}
+
+.city-dropdown:hover,
+.category-dropdown:hover {
+  border-color: #403a34;
+}
+
+.searchbar-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.searchbar {
+  padding: 8px 15px 6px 15px;
+  font-family: "GT America Condensed";
+  font-size: 18px;
+  color: #403a34;
+  border: 2px solid #403a34b7;
+  background-color: #f5f2ea;
+  min-width: 600px;
+  transition: all 0.2s ease;
+}
+
+.searchbar:focus {
+  outline: none;
+  border-color: #403a34;
+  min-width: 800px;
+}
+
+.search-icon {
+  background: none;
+  border: 2px solid #403a34b7;
+  cursor: pointer;
+  font-size: 20px;
+  color: #403a34;
+  transition: color 0.2s ease;
+  padding: 6px 5px 1px 5px;
+  transition: all 0.2s ease;
+}
+
+.search-icon:hover {
+  background-color: #977c5d2a;
+}

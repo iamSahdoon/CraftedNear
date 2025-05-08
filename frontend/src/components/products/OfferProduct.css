@@ -1,0 +1,24 @@
+.o-product-desc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.o-product-desc p {
+  font-family: "GT America Condensed";
+  font-size: 21px;
+  color: #403a34;
+}
+.o-old-price {
+  text-decoration: line-through;
+  text-decoration-color: red;
+}
+.o-desc {
+  font-family: "GT America Condensed";
+  font-size: 21px;
+  color: #403a34;
+}
+.o-points {
+  font-family: "GT America Condensed";
+  font-size: 21px;
+  color: #403a34;
+}

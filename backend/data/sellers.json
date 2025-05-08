@@ -1,0 +1,72 @@
+[
+  {
+    "name": "John's Bakery",
+    "email": "john.bakery@example.com",
+    "password": "hashed_password1",
+    "location": "New York",
+    "tel": "1234567890",
+    "store_category": "Bakery",
+    "profile_visit": 10,
+    "store": {
+      "name": "John's Bakery Store",
+      "avatar": "https://example.com/avatars/john.jpg",
+      "store_description": "Fresh and delicious bakery items made daily."
+    }
+  },
+  {
+    "name": "Tech Hub",
+    "email": "tech.hub@example.com",
+    "password": "hashed_password2",
+    "location": "San Francisco",
+    "tel": "0987654321",
+    "store_category": "Electronics",
+    "profile_visit": 5,
+    "store": {
+      "name": "Tech Hub Electronics",
+      "avatar": "https://example.com/avatars/techhub.jpg",
+      "store_description": "Latest gadgets and tech accessories available here."
+    }
+  },
+  {
+    "name": "Fashion Fiesta",
+    "email": "fashion.fiest@example.com",
+    "password": "hashed_password3",
+    "location": "Los Angeles",
+    "tel": "5551234567",
+    "store_category": "Clothing",
+    "profile_visit": 20,
+    "store": {
+      "name": "Fashion Fiesta Boutique",
+      "avatar": "https://example.com/avatars/fashion.jpg",
+      "store_description": "Trendy clothing and accessories for every occasion."
+    }
+  },
+  {
+    "name": "Handicraft Haven",
+    "email": "handicraft.haven@example.com",
+    "password": "hashed_password4",
+    "location": "Austin",
+    "tel": "2223334444",
+    "store_category": "Handicrafts",
+    "profile_visit": 8,
+    "store": {
+      "name": "Handicraft Haven Store",
+      "avatar": "https://example.com/avatars/handicraft.jpg",
+      "store_description": "Unique, handcrafted items for your home decor."
+    }
+  },
+  {
+    "name": "Auto Zone",
+    "email": "auto.zone@example.com",
+    "password": "hashed_password5",
+    "location": "Detroit",
+    "tel": "7778889999",
+    "store_category": "Vehicle",
+    "profile_visit": 15,
+    "store": {
+      "name": "Auto Zone Motors",
+      "avatar": "https://example.com/avatars/auto.jpg",
+      "store_description": "Quality auto parts and services for every vehicle need."
+    }
+  }
+]

@@ -1,0 +1,11 @@
+.hero-text-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+.hero-text-login h2 {
+  font-family: "GT America Compressed";
+  font-size: 191px;
+  color: #f5f2eaec;
+}

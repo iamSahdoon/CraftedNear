@@ -1,0 +1,134 @@
+/* hero section */
+.home-container {
+  background-color: #f5f2ea;
+  width: 100%;
+}
+
+.home-container hr {
+  width: 1762px;
+  height: 4px;
+  background-color: #403a34; /* Sets the color of the line */
+  border: none; /* Removes the default border styling */
+}
+
+.hr-container {
+  display: flex;
+  justify-content: center;
+  margin-left: 12px;
+}
+
+.hero-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 12px;
+  margin-top: 45px;
+  margin-bottom: 20px;
+}
+.hr-container2 {
+  display: flex;
+  justify-content: center;
+  margin-left: 12px;
+  margin-bottom: -20px;
+}
+
+.hero-text-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -93px;
+}
+
+.italic {
+  font-style: italic;
+}
+.m-left {
+  margin-left: 15px;
+}
+.hero-section h1 {
+  font-family: "GT America Compressed";
+  color: #403a34;
+  font-size: 340px;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  cursor: pointer;
+}
+.hero-section h1:hover {
+  scale: 1.05;
+  color: #917350;
+}
+
+span {
+  font-style: italic;
+}
+
+.sub-hero-text-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 63px 0 93px;
+}
+
+.sub-hero-text-container h2 {
+  font-family: "GT America Compressed";
+  color: #403a34;
+  font-size: 42px;
+}
+.sub-hero-text-container hr {
+  width: 1310px;
+  height: 4px;
+  background-color: #403a34; /* Sets the color of the line */
+  border: none; /* Removes the default border styling */
+}
+
+/* middle section */
+.mid-section-1 {
+  margin-top: 150px;
+}
+.mid-section-2 {
+  margin-top: 50px;
+}
+.mid-section-3 {
+  margin-top: 50px;
+}
+.mid-section-2 .location-icon-wrapper img {
+  display: none;
+}
+.mid-section-3 .location-icon-wrapper img {
+  display: none;
+}
+
+/* stores */
+.stores {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 64px 0 77px;
+}
+.justify-content {
+  justify-content: left;
+  gap: 70px;
+}
+.stores p {
+  font-family: "GT America Standard";
+  font-size: 21px;
+}
+
+.link a {
+  text-decoration: none;
+  color: #403a34;
+}
+
+.link .stores-near {
+  margin-top: 100px;
+}
+
+.mid-section-1 .stores-near {
+  margin-top: -60px;
+}
+
+.mid-section-3 .stores-near {
+  margin-top: 100px;
+}

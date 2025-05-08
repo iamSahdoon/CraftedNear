@@ -1,0 +1,37 @@
+.about-container {
+  background-color: #f5f2ea;
+  width: 100%;
+}
+.about-description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 223px 0px 237px;
+}
+.about-description p {
+  text-align: center;
+  font-family: "GT America Condensed";
+  font-size: 28px;
+  letter-spacing: -1px;
+  word-spacing: 2px;
+}
+
+.img-svgs-about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-about {
+  scale: 0.8;
+  margin-bottom: -50px;
+}
+.a-last-img-about {
+  scale: 0.8;
+  margin-bottom: -20px;
+}
+.last-img-about {
+  scale: 0.8;
+  margin-bottom: -30px;
+}

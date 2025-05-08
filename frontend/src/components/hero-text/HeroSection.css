@@ -1,0 +1,32 @@
+.hero-text-container {
+  margin-top: -10px;
+}
+.hero-text-container-CM {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -93px;
+}
+.hero-text-container-CM h1 {
+  font-family: "GT America Compressed";
+  color: #403a34;
+  font-size: 340px;
+}
+.hr-container2-CM {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hr-container2-CM hr {
+  margin-top: 30px;
+  margin-bottom: 18px;
+  margin-left: 13px;
+  width: 1762px;
+  height: 4px;
+  background-color: #403a34; /* Sets the color of the line */
+  border: none; /* Removes the default border styling */
+}
+.hero-section-CM {
+  margin-top: 20px;
+  margin-bottom: 80px;
+}

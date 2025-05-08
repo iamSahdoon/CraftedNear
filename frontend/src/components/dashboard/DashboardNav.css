@@ -1,0 +1,29 @@
+.dashboard-nav {
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  top: 95px;
+  height: fit-content; /* Add height */
+  align-self: flex-start; /* Ensure it sticks to the top */
+}
+.dashboard-nav button {
+  max-width: 380px;
+  min-width: 380px;
+  height: 60px;
+  text-decoration: none;
+  background-color: #ffffff;
+  font-family: "GT America Condensed";
+  font-size: 18px;
+  border: 1px solid #dadada;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.dashboard-nav button:hover {
+  background-color: #d8d8d8;
+}
+
+.dashboard-nav button.active {
+  background-color: #e0e0e0; /* Example active background */
+  border-left-color: #333; /* Example active indicator */
+  border-left: 5px solid;
+}

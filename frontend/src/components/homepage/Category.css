@@ -1,0 +1,15 @@
+.category {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 64px 0 77px;
+}
+.category a {
+  text-decoration: none;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+}
+.category a:hover {
+  scale: 1.008;
+  filter: grayscale(1);
+}

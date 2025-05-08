@@ -1,0 +1,166 @@
+.profile-container {
+  background-color: #f5f2ea;
+  width: 100%;
+}
+
+.profile-img-des-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+.grid-products-profile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 44px;
+  max-width: 1245px;
+  margin: 0 auto;
+}
+
+.review-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 0px auto;
+  padding: 30px;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.review-container h3 {
+  font-family: "GT America Condensed";
+  color: #403a34;
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+
+.review-container p {
+  font-family: "GT America Standard";
+  color: #403a34;
+  text-align: center;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.review-container input[type="text"] {
+  font-family: "GT America Standard";
+  width: 80%;
+  padding: 13px 15px;
+  margin: 10px 0;
+  border: 1px solid #e0e0e0;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.review-container input[type="text"]:focus {
+  outline: none;
+  border-color: #403a34;
+}
+
+.rating-container {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+  margin-top: 0px;
+}
+
+.rating-container button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  padding: 5px;
+}
+
+.rating-container button img {
+  width: 30px;
+  height: 30px;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+/* Remove the previous hover effect */
+.rating-container button:hover {
+  transform: none;
+}
+
+/* Scale effect for stars before and including the hovered star */
+.rating-container button:hover,
+.rating-container button:has(~ button:hover) {
+  transform: scale(1.2);
+}
+
+.review-container button[type="submit"] {
+  font-family: "GT America Standard";
+  background-color: #403a34;
+  color: white;
+  padding: 15px 250px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  font-weight: 100;
+}
+
+.review-container button[type="submit"]:hover {
+  background-color: #49423a;
+}
+
+/* Add hover effect for the star rating */
+.rating-container button.active img {
+  filter: brightness(2);
+  transform: scale(1.3);
+}
+
+.rating-container button:hover img,
+.rating-container button:hover ~ button img {
+  filter: grayscale(0%);
+}
+
+.rate-us p {
+  margin: 0px auto;
+  margin-top: 20px;
+}
+
+.reviews-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 80px;
+  gap: 40px;
+}
+.review {
+  display: flex;
+  flex-direction: column;
+  max-width: 275px;
+  max-height: 245px;
+  padding: 20px;
+  border: 1px solid #403a34;
+}
+.store-rating {
+  display: flex;
+
+  align-items: center;
+}
+.store-rating img {
+  padding-top: 10px;
+}
+.store-rating p {
+  padding: 0px;
+  font-size: 70px;
+}
+.reviews-wrapper .reviewer-comment {
+  padding: 0px;
+  font-family: "GT America Standard";
+  font-size: 16px;
+  margin-top: 60px;
+}
+.reviews-wrapper .reviewer-name {
+  padding: 0px;
+}

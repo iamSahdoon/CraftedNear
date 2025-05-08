@@ -1,0 +1,35 @@
+.trophie-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  margin: 0 64px 0 77px;
+  margin-top: 5px;
+}
+.trophie-box {
+  width: 370px;
+  height: 320px;
+  background-color: transparent;
+  border: 5px solid #463f38;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+.trophie-box img {
+  width: 120px;
+  height: 120px;
+  margin-top: 60px;
+}
+.trophie-box p {
+  font-family: "GT America Compressed";
+  color: #403a34;
+  font-size: 52px;
+  margin-top: 40px;
+  text-transform: uppercase;
+}
+
+.trophie-box:hover {
+  scale: 1.01;
+  background-color: #ffffff;
+}

@@ -1,0 +1,213 @@
+.customer-profile-container {
+  background-color: #ffffff;
+  width: 100%;
+}
+.name-logout-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 75px 20px 75px;
+}
+.name-logout-wrapper p {
+  font-family: "GT America Compressed md";
+  color: #403a34;
+  font-size: 128px;
+  text-transform: uppercase;
+  padding-top: 20px;
+}
+.name-logout-wrapper button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.name-logout-wrapper button:hover {
+  filter: drop-shadow(20px 0 300px #fc8515) drop-shadow(20px 0 300px #6d4e31)
+    drop-shadow(20px 0 300px #88350e);
+}
+
+.customer-details-wrapper1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 75px 00px 75px;
+}
+.customer-details-wrapper1 p {
+  font-family: "GT America Compressed md";
+  color: #403a34;
+  font-size: 32px;
+}
+
+.customer-details-wrapper2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 75px 0px 75px;
+}
+.customer-details-wrapper2 p {
+  font-family: "GT America Compressed md";
+  color: #403a34;
+  font-size: 32px;
+}
+.customer-profile-container .location-icon {
+  display: none;
+}
+.customer-profile-container .stores {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: 0 64px 0 77px;
+  gap: 60px;
+}
+.stores p {
+  font-family: "GT America Standard";
+  font-size: 21px;
+}
+.link a {
+  text-decoration: none;
+  color: #403a34;
+}
+.trophies-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  margin: 0 64px 20px 77px;
+  margin-top: 5px;
+  gap: 93px;
+}
+
+.p-table {
+  width: 93%;
+  margin: 20px 64px 50px 77px;
+  border-collapse: collapse;
+  font-family: "GT America Standard";
+  color: #403a34;
+}
+
+thead {
+  background-color: #f5f5f5;
+}
+
+th {
+  padding: 15px;
+  text-align: left;
+  font-size: 23px;
+  font-weight: 600;
+}
+
+td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 21px;
+}
+
+tbody tr:hover {
+  background-color: #d0c8b238;
+}
+
+/* Customer Profile Update Form */
+.customer-update-form {
+  width: 93%;
+  margin: 20px 64px 50px 77px;
+  font-family: "GT America Standard";
+  color: #403a34;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f5f5f5;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.form-label {
+  font-size: 23px;
+  font-weight: 600;
+  width: 25%;
+  text-align: left;
+}
+
+.form-inputs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.form-inputs input {
+  width: 22%;
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 0;
+  font-size: 21px;
+  font-family: "GT America Standard";
+}
+
+.update-button {
+  width: 100%;
+  background-color: #2d2d2d;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-family: "GT America Standard";
+  font-size: 21px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.update-button:hover {
+  background-color: #444;
+}
+.error-message-cus {
+  color: #d9534f;
+  text-align: center;
+  margin: 10px 0;
+  font-weight: bold;
+  padding: 0px;
+}
+
+.success-message-cus {
+  color: #5cb85c;
+  text-align: right;
+  margin: 10px 0;
+  font-weight: bold;
+  padding: 0px;
+}
+.form-inputs .password-cus::placeholder {
+  font-size: 18px;
+}
+
+.favorite-store-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.remove-favorite-btn {
+  position: absolute;
+  font-family: "GT America Standard";
+  font-weight: bold;
+  top: 10px;
+  right: 10px;
+  background-color: #ff4444d0;
+  color: #403a34;
+  border: none;
+  border-radius: 0px;
+  width: 80px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.favorite-store-wrapper:hover .remove-favorite-btn {
+  opacity: 1;
+}
+
+.remove-favorite-btn:hover {
+  background-color: #f32929;
+}

@@ -1,0 +1,10 @@
+.g-product-desc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.g-product-desc p {
+  font-family: "GT America Condensed";
+  font-size: 21px;
+  color: #403a34;
+}

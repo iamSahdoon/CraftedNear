@@ -1,0 +1,22 @@
+.seller-hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+}
+h2 {
+  font-family: "GT America Compressed";
+  font-size: 138px;
+  text-align: center;
+  color: #403a34;
+  line-height: 130px;
+}
+h3 {
+  font-family: "GT America Standard";
+  font-size: 28px;
+  text-align: center;
+  color: #403a34;
+  font-weight: 500;
+  margin-top: 20px;
+}

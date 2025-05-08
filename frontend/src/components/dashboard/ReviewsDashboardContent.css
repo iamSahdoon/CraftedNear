@@ -1,0 +1,86 @@
+.reviews-dashboard-content {
+  width: 100%;
+  padding-left: 40px; /* Match other dashboard content padding */
+}
+
+.reviews-dashboard-content h2 {
+  font-family: "GT America Condensed";
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.average-rating-display {
+  font-family: "GT America Standard";
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 30px;
+  text-align: left; /* Or center if preferred */
+}
+
+.average-rating-display span {
+  font-weight: bold;
+  color: #e67e22; /* Example color for rating */
+}
+
+/* Grid layout for reviews in the dashboard */
+.reviews-grid {
+  display: grid;
+  /* Adjust columns for dashboard view - maybe fewer columns than gallery */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 45px; /* Adjust gap */
+}
+
+/* Reuse styles from Review.css by ensuring Review.css is imported globally or scoping if needed */
+/* If Review.jsx styles aren't applying, you might need to copy them here or adjust imports */
+
+/* Example: Styles copied/adapted from frontend/src/pages/CSS/SellerProfile.css review section */
+.reviews-grid .review {
+  display: flex;
+  flex-direction: column;
+  max-width: 275px;
+  max-height: 245px;
+  padding: 20px;
+  border: 1px solid #403a3475;
+}
+.reviews-grid .store-rating {
+  /* Target nested class */
+  display: flex;
+  align-items: center;
+  margin-top: 10px; /* Add some space */
+}
+.reviews-grid .store-rating img {
+  padding-top: 0px; /* Adjust padding */
+
+  margin-left: 5px;
+}
+.reviews-grid .store-rating p {
+  padding: 0px;
+  font-size: 70px;
+}
+.reviews-grid .reviewer-name {
+  padding: 0px;
+  font-family: "GT America Condensed";
+  font-size: 21px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 5px;
+}
+.reviews-grid .reviewer-comment {
+  padding: 0px;
+  font-family: "GT America Standard";
+  font-size: 14px;
+  color: #555;
+  margin-top: 15px; /* Adjust spacing */
+  line-height: 1.5;
+  flex-grow: 1; /* Allow comment to take space */
+}
+
+.reviews-dashboard-content > p {
+  /* Style for 'Loading' or 'No reviews' */
+  font-family: "GT America Standard";
+  font-size: 16px;
+  color: #777;
+  text-align: center;
+  margin-top: 40px;
+}

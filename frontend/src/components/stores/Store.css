@@ -1,0 +1,18 @@
+.store-wrapper {
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  margin-top: 25px;
+}
+.store-wrapper:hover {
+  scale: 1.02;
+}
+.stores img {
+  transition: all 0.2s ease-in-out;
+  border: 1px solid #20150925;
+}
+.stores img:hover {
+  box-shadow: 0px 0px 2px 2px #2015095d;
+}
+.store-wrapper p {
+  padding: 0px;
+}

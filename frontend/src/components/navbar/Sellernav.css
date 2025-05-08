@@ -1,0 +1,35 @@
+.profile-navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 75px;
+  margin-bottom: 47px;
+}
+.profile-navbar button {
+  text-decoration: none;
+  font-family: "GT America Condensed";
+  font-size: 24px;
+  font-weight: 500;
+  color: #403a34;
+  transition: all 0.2s ease-in-out;
+  padding: 6px 120px 6px 120px;
+  border: 1px solid #403a34a9;
+  background-color: #e8e4db;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.profile-navbar button:hover {
+  background-color: #dad5cb;
+}
+.profile-navbar .small-pad {
+  padding: 6px 75px 6px 75px;
+}
+.profile-navbar .small-pad-2 {
+  padding: 6px 115px 6px 115px;
+}
+.profile-navbar .big-pad {
+  padding: 6px 125px 6px 125px;
+}
+.profile-navbar a:hover {
+  filter: brightness(0.97);
+}

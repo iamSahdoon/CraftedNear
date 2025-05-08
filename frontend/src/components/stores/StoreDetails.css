@@ -1,0 +1,67 @@
+.store-info-wrapper {
+  max-width: 692px;
+  display: flex;
+  flex-direction: column;
+}
+.store-info-wrapper p {
+  font-family: "GT America Standard";
+  color: #6e6d6a;
+}
+.store-info-wrapper .store-des {
+  padding-top: 10px;
+  text-align: justify;
+  font-family: "GT America Standard";
+  font-size: 17px;
+  color: black;
+  line-height: 23px;
+  margin-bottom: 20px;
+}
+
+.store-des-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.store-name-svg-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.store-name-svg-wrapper a {
+  margin-top: 5px;
+}
+.store-name-svg-wrapper .store_name {
+  font-family: "GT America Condensed";
+  font-size: 25px;
+  color: #403a34;
+}
+
+.store-name-svg-wrapper a img {
+  scale: 0.75;
+}
+.heart {
+  scale: 1;
+  transition: all 0.2s ease-in-out;
+}
+.heart:hover {
+  filter: brightness(1.7);
+}
+
+.store-contact-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.store-contact-wrapper p {
+  font-family: "GT America Standard";
+  font-size: 17px;
+  color: #6e6d6a;
+  padding-top: 10px;
+}
+
+.heart-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

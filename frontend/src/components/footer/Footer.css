@@ -1,0 +1,94 @@
+.footer {
+  background-color: #403a34;
+  margin-top: 100px;
+}
+.footer-section-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 64px 0 77px;
+}
+.footer-section-1 h3 {
+  color: #ddd5beea;
+  font-family: "GT America Compressed";
+  font-size: 115px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.footer-section-1 h3:hover {
+  color: #a79583;
+}
+.footer-section-1 .to-top {
+  text-decoration: none;
+}
+.socials {
+  margin-top: -18px;
+}
+.socials h4 {
+  font-family: "GT America Compressed";
+  font-size: 26px;
+  color: #ddd5beea;
+  letter-spacing: 0px;
+}
+.socials-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+.socials-wrapper img {
+  filter: brightness(0.8);
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.socials-wrapper img:hover {
+  box-shadow: 0px 0px 2px 2px #c7c5c3a2;
+}
+.footer-section-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 64px 0 77px;
+}
+.footer-s2-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.footer-links a {
+  font-family: "GT America Condensed";
+  font-size: 21px;
+  color: #ddd5bea6;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+.footer-links a:hover {
+  color: #917350;
+  text-decoration: underline;
+}
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "GT America Condensed";
+  font-size: 21px;
+  color: #ddd5bea6;
+  text-align: center;
+  margin-top: 75px;
+  margin-bottom: 15px;
+  gap: 1px;
+}
+.copyright p {
+  padding-top: 5px;
+  color: #ddd5bea6;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.copyright img {
+  filter: brightness(0.95);
+  scale: 0.8;
+}

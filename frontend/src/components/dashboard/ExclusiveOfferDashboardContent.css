@@ -1,0 +1,279 @@
+.exclusive-offer-dashboard-content {
+  width: 100%;
+  padding-left: 40px;
+}
+
+.exclusive-offer-dashboard-content h2 {
+  font-family: "GT America Condensed";
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.add-new-item-btn {
+  display: inline-block;
+  margin-bottom: 30px;
+  padding: 10px 20px;
+  background-color: #403a34ee; /* Green */
+  color: white;
+  border: none;
+  font-family: "GT America Condensed";
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.add-new-item-btn:hover {
+  background-color: #45a049;
+}
+
+.exclusive-offer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.exclusive-offer-card {
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.exclusive-offer-card-img {
+  width: 100%;
+  height: 376px;
+  object-fit: contain;
+  background-color: #f0f0f0;
+}
+
+.exclusive-offer-card-info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.exclusive-offer-card-desc {
+  font-family: "GT America Standard";
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 10px;
+  padding: 0px;
+  text-align: center;
+}
+
+/* Container for prices and threshold */
+.exclusive-offer-card-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 5px; /* Space between prices and threshold */
+  margin-top: 5px;
+}
+
+.exclusive-offer-card-prices {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 15px;
+}
+
+.exclusive-offer-card-old-price {
+  font-family: "GT America Condensed";
+  font-size: 15px;
+  padding: 0px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.exclusive-offer-card-new-price {
+  font-family: "GT America Condensed";
+  font-size: 18px;
+  padding: 0px;
+  color: #c0392b;
+  font-weight: bold;
+}
+
+/* Style for the threshold */
+.exclusive-offer-card-threshold {
+  font-family: "GT America Standard";
+  font-size: 14px;
+  color: #3498db; /* Blue color for points */
+  font-weight: 500;
+  padding: 0px;
+  margin-top: 5px; /* Add some space above threshold */
+}
+
+.exclusive-offer-card-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-top: 1px solid #e0e0e0;
+  background-color: #f9f9f9;
+}
+
+.exclusive-offer-card-actions button {
+  padding: 6px 12px;
+  border: none;
+  font-family: "GT America Condensed";
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.edit-btn {
+  background-color: #403a348f; /* Blue */
+  color: white;
+}
+.edit-btn:hover {
+  background-color: #e5a61e;
+}
+
+.delete-btn {
+  background-color: #403a34; /* Red */
+  color: white;
+}
+.delete-btn:hover {
+  background-color: #e53935;
+}
+
+/* --- Modal Styles (Mostly reusable) --- */
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal Content Box */
+.modal-content {
+  background-color: white;
+  padding: 30px 40px;
+  border-radius: 5px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h3 {
+  font-family: "GT America Condensed";
+  margin-top: 0;
+  margin-bottom: 25px;
+  color: #333;
+  text-align: center;
+}
+
+/* Form Groups within Modal */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-family: "GT America Condensed";
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  font-family: "GT America Standard";
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-group input[type="file"] {
+  padding: 5px;
+}
+
+/* Specific style for grouping price inputs */
+.form-group.price-group {
+  display: flex;
+  gap: 15px;
+}
+.form-group.price-group > div {
+  flex: 1;
+}
+
+/* Image Preview */
+.image-preview {
+  display: block;
+  max-width: 100px;
+  max-height: 100px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+}
+
+/* Modal Buttons */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.modal-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-family: "GT America Condensed";
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.save-btn {
+  background-color: #4caf50;
+  color: white;
+}
+.save-btn:hover {
+  background-color: #45a049;
+}
+.save-btn:disabled {
+  background-color: #a5d6a7;
+  cursor: not-allowed;
+}
+
+.cancel-btn {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+}
+.cancel-btn:hover {
+  background-color: #e0e0e0;
+}
+
+/* --- Error/Success Messages (Reusable) --- */
+.error-message {
+  color: #f44336; /* Red */
+  font-family: "GT America Standard";
+  font-size: 14px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.success-message {
+  color: #4caf50; /* Green */
+  font-family: "GT America Standard";
+  font-size: 14px;
+  margin-bottom: 15px; /* Adjusted margin */
+  text-align: center;
+}
