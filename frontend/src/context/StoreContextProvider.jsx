@@ -69,7 +69,10 @@ const StoreContextProvider = (props) => {
         setCustomer(data.customerExists);
         localStorage.setItem("customer", JSON.stringify(data.customerExists));
         localStorage.setItem("customerToken", data.token);
-
+        console.log("Customer data saved:", {
+          customer: data.customerExists,
+          token: data.token,
+        });
         // After setting the customer state, update points
         // This ensures we have a customer ID available
         // We use a small timeout to ensure the state is set first

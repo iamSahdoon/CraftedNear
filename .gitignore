@@ -1,1 +1,29 @@
-.qodo
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment variables
+.env
+**/.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build folders
+dist/
+build/
+
+# Vercel
+.vercel/
+
+# Render
+.render/
+
+# IDE
+.vscode/
+.idea/

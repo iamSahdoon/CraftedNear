@@ -34,8 +34,8 @@ const Title = ({ text1, text2, text3, text4 }) => {
 Title.propTypes = {
   text1: PropTypes.string.isRequired,
   text2: PropTypes.string.isRequired,
-  text3: PropTypes.string.isRequired,
-  text4: PropTypes.string.isRequired,
+  text3: PropTypes.string,
+  text4: PropTypes.string,
 };
 
 export default Title;
