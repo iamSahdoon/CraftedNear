@@ -8,18 +8,18 @@ CraftedNear was designed to improve accessibility to local sellers by providing 
 
 ## Key Features
 
-- Seller registration and digital storefront creation  
-- Customer discovery of nearby sellers  
-- Role-based authentication and authorization using JWT  
-- Customer reviews and rating system  
-- Exclusive offers for authenticated users  
-- Favorite store management  
+- Seller registration and digital storefront creation
+- Customer discovery of nearby sellers
+- Role-based authentication and authorization using JWT
+- Customer reviews and rating system
+- Exclusive offers for authenticated users
+- Favorite store management
 - Gamification system including:
   - Points
   - Badges
   - Titles
-  - Leaderboards  
-- Media upload and management using Cloudinary  
+  - Leaderboards
+- Media upload and management using Cloudinary
 
 ## User Feedback
 
@@ -28,20 +28,25 @@ Based on collected feedback, 84% of users confirmed improved usability, better a
 ## Technology Stack
 
 **Frontend**
+
 - React
 - Context API
 
 **Backend**
+
 - Node.js
 - Express.js
 
 **Database**
+
 - MongoDB
 
 **Authentication**
+
 - JSON Web Tokens (JWT)
 
 **Media Management**
+
 - Cloudinary
 
 ## System Architecture
@@ -50,4 +55,4 @@ The application follows a MERN stack architecture with a REST-based communicatio
 
 ## Design Prototype
 
-Figma Design Link:  https://figmashort.link/AdchPz
+Figma Design Link: https://figmashort.link/AdchPz
