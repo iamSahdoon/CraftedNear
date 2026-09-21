@@ -5,9 +5,471 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CraftedNear</title>
+    <script>
+      // The splash loader only runs when the app is opened on the homepage.
+      if (location.pathname === "/") {
+        document.documentElement.classList.add("cnl-active");
+      }
+    </script>
+    <style>
+      /* Splash loader. Inline so it paints before the app bundle downloads. */
+      @font-face {
+        font-family: "CNL Display";
+        src: url("/src/fonts/GT-America-Compressed-Bold-Trial.otf")
+          format("opentype");
+        font-display: block;
+      }
+      @font-face {
+        font-family: "CNL Display";
+        src: url("/src/fonts/GT-America-Compressed-Bold-Italic-Trial.otf")
+          format("opentype");
+        font-style: italic;
+        font-display: block;
+      }
+
+      .cnl {
+        display: none;
+      }
+      html.cnl-active {
+        overflow: hidden;
+      }
+      html.cnl-active .cnl {
+        --cnl-cream: #f5f2ea;
+        --cnl-ink: #403a34;
+        --cnl-tan: #d4a36a;
+        --cnl-ease: cubic-bezier(0.76, 0, 0.24, 1);
+        --cnl-rise: cubic-bezier(0.22, 1, 0.36, 1);
+        --cnl-sink: cubic-bezier(0.7, 0, 0.84, 0);
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        /* Size to the screen: phones widen the layout viewport to fit wide pages. */
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        z-index: 2147483647;
+      }
+      .cnl.is-lifting {
+        pointer-events: none;
+      }
+      .cnl-sr {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+      }
+
+      /* Two stacked panels: cream lifts first, tan follows it out. */
+      .cnl-layer {
+        position: absolute;
+        inset: 0;
+        transition: transform 0.85s var(--cnl-ease),
+          border-radius 0.85s var(--cnl-ease);
+      }
+      .cnl-layer--tan {
+        background: var(--cnl-tan);
+        transition-delay: 0.12s;
+      }
+      .cnl-layer--cream {
+        display: grid;
+        place-items: center;
+        background: var(--cnl-cream);
+      }
+      .cnl.is-lifting .cnl-layer {
+        transform: translateY(-100%);
+        border-bottom-left-radius: 50% 16vh;
+        border-bottom-right-radius: 50% 16vh;
+      }
+
+      .cnl-stage {
+        width: fit-content;
+        max-width: 94vw;
+        color: var(--cnl-ink);
+        font-family: "CNL Display", "Arial Narrow", sans-serif;
+        font-weight: normal;
+      }
+      .cnl-word {
+        display: flex;
+        align-items: flex-end;
+        font-size: clamp(44px, 15.5vw, 216px);
+        line-height: 0.82;
+      }
+      .cnl-mask {
+        display: block;
+        overflow: hidden;
+        padding: 0.06em 0.05em 0;
+        margin: 0 -0.05em;
+      }
+      .cnl-ch,
+      .cnl-sub,
+      .cnl-count {
+        display: block;
+        font-style: normal; /* Home.css italicises every span */
+        transform: translateY(105%);
+      }
+      .cnl .cnl-it {
+        font-style: italic;
+      }
+      .cnl-gap {
+        width: 0.16em;
+      }
+
+      /* The logo's dot, dropped in like a map pin. The box mirrors a letter
+         mask, so the dot sits on the same baseline as the letters. */
+      .cnl-pinbox {
+        display: block;
+        flex: none;
+        padding-top: 0.06em;
+        font-style: normal;
+      }
+      .cnl-pin {
+        position: relative;
+        display: inline-block;
+        vertical-align: baseline;
+        width: 0.175em;
+        height: 0.21em;
+        margin-left: 0.06em;
+      }
+      .cnl-dot {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        background: var(--cnl-ink);
+        transform-origin: 50% 100%;
+        opacity: 0;
+      }
+      .cnl-pin::before,
+      .cnl-pin::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border: 0.021em solid var(--cnl-tan);
+        border-radius: 50%;
+        opacity: 0;
+      }
+
+      /* Progress: the hero's 4px rule, drawn as the page loads. */
+      .cnl-rule {
+        position: relative;
+        height: 4px;
+        margin-top: clamp(12px, 1.8vw, 26px);
+        overflow: hidden;
+        background: rgba(64, 58, 52, 0.14);
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+      }
+      .cnl-fill {
+        position: absolute;
+        inset: 0;
+        background: var(--cnl-ink);
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+      }
+      .cnl-meta {
+        display: flex;
+        justify-content: space-between;
+        gap: 1em;
+        margin-top: clamp(8px, 1.1vw, 14px);
+        font-size: clamp(17px, 2.3vw, 34px);
+        line-height: 1;
+      }
+      .cnl-count {
+        font-variant-numeric: tabular-nums;
+      }
+
+      /* Intro */
+      .cnl.is-ready .cnl-ch {
+        animation: cnl-rise 0.9s var(--cnl-rise)
+          calc(0.08s + var(--i) * 0.055s) both;
+      }
+      .cnl.is-ready .cnl-rule {
+        animation: cnl-draw 1s var(--cnl-ease) 0.25s both;
+      }
+      .cnl.is-ready .cnl-sub,
+      .cnl.is-ready .cnl-count {
+        animation: cnl-rise 0.8s var(--cnl-rise) 0.55s both;
+      }
+      .cnl.is-ready .cnl-dot {
+        animation: cnl-drop 0.85s linear 0.95s both;
+      }
+      .cnl.is-ready .cnl-pin::before {
+        animation: cnl-ping 1.8s cubic-bezier(0.2, 0.6, 0.35, 1) 1.55s infinite;
+      }
+      .cnl.is-ready .cnl-pin::after {
+        animation: cnl-ping 1.8s cubic-bezier(0.2, 0.6, 0.35, 1) 2.45s infinite;
+      }
+
+      /* Exit */
+      .cnl.is-leaving .cnl-ch {
+        animation: cnl-out 0.6s var(--cnl-sink) calc(var(--i) * 0.02s) both;
+      }
+      .cnl.is-leaving .cnl-sub,
+      .cnl.is-leaving .cnl-count {
+        animation: cnl-out 0.5s var(--cnl-sink) both;
+      }
+      .cnl.is-leaving .cnl-rule {
+        transform-origin: 100% 50%;
+        animation: cnl-undraw 0.6s var(--cnl-ease) both;
+      }
+      .cnl.is-leaving .cnl-dot {
+        animation: cnl-pop 0.45s var(--cnl-sink) both;
+      }
+      .cnl.is-leaving .cnl-pin::before,
+      .cnl.is-leaving .cnl-pin::after {
+        animation: none;
+        opacity: 0;
+      }
+
+      @keyframes cnl-rise {
+        from {
+          transform: translateY(105%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+      @keyframes cnl-out {
+        from {
+          transform: translateY(0);
+        }
+        to {
+          transform: translateY(-110%);
+        }
+      }
+      @keyframes cnl-draw {
+        from {
+          transform: scaleX(0);
+        }
+        to {
+          transform: scaleX(1);
+        }
+      }
+      @keyframes cnl-undraw {
+        from {
+          transform: scaleX(1);
+        }
+        to {
+          transform: scaleX(0);
+        }
+      }
+      @keyframes cnl-drop {
+        0% {
+          opacity: 0;
+          transform: translateY(-2.2em) scale(0.9, 1.1);
+          animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+        }
+        12% {
+          opacity: 1;
+        }
+        55% {
+          transform: translateY(0) scale(1.22, 0.78);
+          animation-timing-function: cubic-bezier(0.2, 0.8, 0.4, 1);
+        }
+        72% {
+          transform: translateY(-0.1em) scale(0.94, 1.06);
+          animation-timing-function: ease-in-out;
+        }
+        86% {
+          transform: translateY(0) scale(1.05, 0.95);
+        }
+        100% {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @keyframes cnl-ping {
+        from {
+          opacity: 0.9;
+          transform: scale(1);
+        }
+        to {
+          opacity: 0;
+          transform: scale(3);
+        }
+      }
+      @keyframes cnl-pop {
+        from {
+          opacity: 1;
+          transform: none;
+        }
+        to {
+          opacity: 0;
+          transform: scale(0);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .cnl .cnl-ch,
+        .cnl .cnl-sub,
+        .cnl .cnl-count,
+        .cnl .cnl-rule,
+        .cnl .cnl-dot {
+          animation: none !important;
+          transform: none;
+          opacity: 1;
+        }
+        .cnl .cnl-pin::before,
+        .cnl .cnl-pin::after {
+          display: none;
+        }
+        .cnl-layer {
+          transition: opacity 0.4s ease;
+        }
+        .cnl.is-lifting .cnl-layer {
+          transform: none;
+          border-radius: 0;
+          opacity: 0;
+        }
+      }
+    </style>
   </head>
   <body>
+    <div class="cnl" id="cnl" role="status" aria-live="polite">
+      <span class="cnl-sr">Loading CraftedNear…</span>
+      <div class="cnl-layer cnl-layer--tan" aria-hidden="true"></div>
+      <div class="cnl-layer cnl-layer--cream" aria-hidden="true">
+        <div class="cnl-stage">
+          <div class="cnl-word">
+            <span class="cnl-mask"><span class="cnl-ch cnl-it" style="--i: 0">C</span></span>
+            <span class="cnl-mask"><span class="cnl-ch" style="--i: 1">R</span></span>
+            <span class="cnl-mask"><span class="cnl-ch" style="--i: 2">A</span></span>
+            <span class="cnl-mask"><span class="cnl-ch" style="--i: 3">F</span></span>
+            <span class="cnl-mask"><span class="cnl-ch" style="--i: 4">T</span></span>
+            <span class="cnl-mask"><span class="cnl-ch" style="--i: 5">E</span></span>
+            <span class="cnl-mask"><span class="cnl-ch" style="--i: 6">D</span></span>
+            <span class="cnl-gap"></span>
+            <span class="cnl-mask"><span class="cnl-ch cnl-it" style="--i: 7">N</span></span>
+            <span class="cnl-mask"><span class="cnl-ch" style="--i: 8">E</span></span>
+            <span class="cnl-mask"><span class="cnl-ch" style="--i: 9">A</span></span>
+            <span class="cnl-mask"><span class="cnl-ch" style="--i: 10">R</span></span>
+            <span class="cnl-pinbox"><span class="cnl-pin"><span class="cnl-dot"></span></span></span>
+          </div>
+          <div class="cnl-rule"><span class="cnl-fill" id="cnl-fill"></span></div>
+          <div class="cnl-meta">
+            <span class="cnl-mask"><span class="cnl-sub">Finding stores near you</span></span>
+            <span class="cnl-mask"><span class="cnl-count" id="cnl-count">000</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
     <div id="root"></div>
+    <script>
+      // Splash loader controller. Home calls window.CNLoader.finishWhen()
+      // (via src/utils/pageLoader.js) with the promises it needs to render.
+      (() => {
+        const html = document.documentElement;
+        const loader = document.getElementById("cnl");
+
+        if (!html.classList.contains("cnl-active")) {
+          loader.remove();
+          window.CNLoader = { pending: false, finishWhen() {} };
+          return;
+        }
+
+        const app = document.getElementById("root");
+        const fill = document.getElementById("cnl-fill");
+        const count = document.getElementById("cnl-count");
+        const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const MIN_SHOW = reduced ? 700 : 2100; // let the intro play out
+        const MAX_WAIT = 3500; // stop waiting on a slow request (stores sit below the fold)
+        const FAILSAFE = 12000; // once the intro starts, reveal the page even if the app never boots
+
+        let introAt = 0;
+        let shown = 0;
+        let settled = 0;
+        let total = 0;
+        let ready = false;
+        let leaving = false;
+
+        const render = () => {
+          fill.style.transform = `scaleX(${shown / 100})`;
+          count.textContent = String(Math.round(shown)).padStart(3, "0");
+        };
+
+        const leave = () => {
+          if (leaving) return;
+          leaving = true;
+          api.pending = false;
+          shown = 100;
+          render();
+          loader.classList.add("is-leaving");
+          setTimeout(() => loader.classList.add("is-lifting"), reduced ? 0 : 350);
+          setTimeout(() => {
+            loader.remove();
+            html.classList.remove("cnl-active");
+            app.removeAttribute("aria-busy");
+          }, reduced ? 450 : 1400);
+        };
+
+        const api = {
+          pending: true,
+          finishWhen(tasks) {
+            if (!api.pending) return;
+            api.pending = false;
+            total = tasks.length;
+            const each = tasks.map((task) =>
+              Promise.resolve(task)
+                .catch(() => {})
+                .then(() => {
+                  settled++;
+                })
+            );
+            const cap = new Promise((resolve) => setTimeout(resolve, MAX_WAIT));
+            Promise.race([Promise.all(each), cap]).then(() => {
+              ready = true;
+            });
+          },
+        };
+        window.CNLoader = api;
+        app.setAttribute("aria-busy", "true");
+
+        // Opened in a background tab: hold the intro until the visitor looks.
+        const whenVisible = (fn) => {
+          if (document.visibilityState === "visible") return fn();
+          const onShow = () => {
+            if (document.visibilityState !== "visible") return;
+            document.removeEventListener("visibilitychange", onShow);
+            fn();
+          };
+          document.addEventListener("visibilitychange", onShow);
+        };
+
+        const startIntro = () =>
+          whenVisible(() => {
+            if (introAt) return;
+            introAt = performance.now();
+            loader.classList.add("is-ready");
+            setTimeout(leave, FAILSAFE);
+          });
+
+        // Start once the display font is in, so letters never flash in a fallback face.
+        Promise.all([
+          document.fonts.load('1em "CNL Display"'),
+          document.fonts.load('italic 1em "CNL Display"'),
+        ]).then(startIntro, startIntro);
+        setTimeout(startIntro, 1200);
+
+        const tick = (now) => {
+          if (leaving) return;
+          if (introAt) {
+            const elapsed = Math.max(0, now - introAt);
+            // Creep toward 90 on a timer; finished tasks pull the bar ahead.
+            const creep = 90 * (1 - Math.exp(-elapsed / 1800));
+            const real = total ? 20 + 70 * (settled / total) : 0;
+            const done = ready && elapsed >= MIN_SHOW;
+            const target = done ? 100 : Math.max(creep, real);
+            shown += (target - shown) * (done ? 0.2 : 0.07);
+            if (done && shown > 99.5) return leave();
+            render();
+          }
+          requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      })();
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

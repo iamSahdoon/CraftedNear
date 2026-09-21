@@ -9,15 +9,24 @@ import Category from "../components/homepage/Category";
 import default_store_img from "../assets/images/store.png";
 
 import { Link } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { StoreContext } from "../context/StoreContext";
+import { hideLoaderWhen, imageReady } from "../utils/pageLoader";
 
 const Home = () => {
   const { customer, sellers, fetchSellers } = useContext(StoreContext);
   const [filteredSellers, setFilteredSellers] = useState([]);
+  const heroImgRef = useRef(null);
 
   useEffect(() => {
-    fetchSellers();
+    const sellersLoaded = fetchSellers();
+    hideLoaderWhen(() => [
+      sellersLoaded,
+      imageReady(heroImgRef.current),
+      document.fonts.load('1em "GT America Compressed"'),
+      document.fonts.load('italic 1em "GT America Compressed"'),
+      document.fonts.load('1em "GT America Condensed"'),
+    ]);
   }, []);
 
   useEffect(() => {
@@ -42,7 +51,7 @@ const Home = () => {
         {/* hero section */}
         <div className="hero-section">
           <div className="hero-img-container">
-            <img src={CN_bg} alt="store_image" />
+            <img ref={heroImgRef} src={CN_bg} alt="store_image" />
           </div>
           <div className="hr-container2"></div>
           <div className="hero-text-container">

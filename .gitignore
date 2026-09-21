@@ -27,3 +27,6 @@ build/
 # IDE
 .vscode/
 .idea/
+
+# Claude Code (local tooling config)
+.claude/
