@@ -5,12 +5,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: -93px;
+  /* -93px at 1920px wide, scaling down with the title below that */
+  margin-bottom: max(-93px, -4.87vw);
 }
 .hero-text-container-CM h1 {
   font-family: "GT America Compressed";
   color: #403a34;
-  font-size: 340px;
+  /* 340px at 1920px wide; shrinks so STOREFRONTS always fits */
+  font-size: min(340px, 17.8vw);
 }
 .hr-container2-CM {
   display: flex;
@@ -29,4 +31,11 @@
 .hero-section-CM {
   margin-top: 20px;
   margin-bottom: 80px;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .hero-section-CM {
+    margin-bottom: 40px;
+  }
 }

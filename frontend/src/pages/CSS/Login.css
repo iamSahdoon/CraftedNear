@@ -78,3 +78,65 @@
   justify-content: center;
   align-items: center;
 }
+
+/* Responsive: panels shrink on laptops, stack on tablets and phones */
+@media (max-width: 1540px) {
+  .login-wrapper {
+    padding: 0 32px;
+  }
+  .cus-login,
+  .sell-login {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 34px 5% 80px;
+  }
+  .login-wrapper form {
+    width: 100%;
+  }
+  .login-wrapper input,
+  .login-wrapper button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 960px) {
+  .login-wrapper {
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 64px;
+  }
+  .cus-login,
+  .sell-login {
+    padding: 24px 24px 32px;
+  }
+  .login-wrapper p {
+    padding: 0 0 20px;
+    font-size: 22px;
+  }
+  .login-wrapper .error-message {
+    margin: 0 0 16px;
+  }
+  .login-wrapper input,
+  .login-wrapper button {
+    height: 54px;
+  }
+  /* 16px+ stops iPhones zooming in when a field is tapped */
+  .login-wrapper input {
+    padding-left: 16px;
+    font-size: 16px;
+  }
+  .login-wrapper button {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .login-wrapper {
+    padding: 0 20px;
+    margin-bottom: 48px;
+  }
+  .cus-login,
+  .sell-login {
+    padding: 20px 18px 24px;
+  }
+}

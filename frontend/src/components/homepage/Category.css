@@ -2,14 +2,56 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* only kicks in when the row is too narrow for the natural spacing */
+  gap: 16px;
   margin: 0 64px 0 77px;
 }
 .category a {
+  min-width: 0;
   text-decoration: none;
   transition: all 0.15s ease-in-out;
   cursor: pointer;
 }
+.category img {
+  max-width: 100%;
+}
 .category a:hover {
   scale: 1.008;
   filter: grayscale(1);
+}
+
+/* Responsive: tiles 3 + 2 on tablets */
+@media (max-width: 960px) {
+  .category {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin: 0 32px;
+  }
+  .category a {
+    flex: 0 0 calc((100% - 32px) / 3);
+  }
+  .category img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Phones: full-width banners, so the labels inside the images stay
+   readable. Each label sits mid-image, so the centre crop keeps it. */
+@media (max-width: 600px) {
+  .category {
+    flex-direction: column;
+    gap: 12px;
+    margin: 0 20px;
+  }
+  .category a {
+    flex: none;
+    width: 100%;
+  }
+  .category img {
+    aspect-ratio: 5 / 2;
+    object-fit: cover;
+  }
 }

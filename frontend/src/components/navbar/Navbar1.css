@@ -82,3 +82,149 @@ p {
   background-color: #d4a36a;
   color: #403a34;
 }
+
+/* Mobile menu pieces, hidden on desktop */
+.menu-toggle,
+.navbar .nav-link-user {
+  display: none;
+}
+
+/* Responsive: fold the links into a full-screen menu */
+@media (max-width: 960px) {
+  html.nav-open {
+    overflow: hidden;
+  }
+  /* "header" prefix outranks SellerdashboardNav.css, which also styles .navbar */
+  header {
+    --nav-h: 64px;
+  }
+  header .navbar {
+    padding: 12px 20px;
+  }
+  header .navbar > a:first-child {
+    display: flex;
+    padding: 0;
+  }
+  header .navbar img {
+    width: 40px;
+    height: 40px;
+    padding-top: 7px;
+  }
+  .navbar-user-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 40px;
+    margin-right: -10px;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+  }
+  .menu-toggle-bars {
+    position: relative;
+    width: 26px;
+    height: 10px;
+  }
+  .menu-toggle-bars::before,
+  .menu-toggle-bars::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #403a34;
+    transition: top 0.3s ease, transform 0.3s ease;
+  }
+  .menu-toggle-bars::before {
+    top: 0;
+  }
+  .menu-toggle-bars::after {
+    top: 7px;
+  }
+  .menu-toggle.is-open .menu-toggle-bars::before {
+    top: 3.5px;
+    transform: rotate(45deg);
+  }
+  .menu-toggle.is-open .menu-toggle-bars::after {
+    top: 3.5px;
+    transform: rotate(-45deg);
+  }
+
+  .nav-links {
+    position: fixed;
+    top: var(--nav-h);
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - var(--nav-h));
+    height: calc(100dvh - var(--nav-h));
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 4px;
+    padding: 24px 20px 32px;
+    overflow-y: auto;
+    background-color: #f5f2ea;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.25s ease, visibility 0s linear 0.25s;
+  }
+  .nav-links.is-open {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.25s ease;
+  }
+
+  .navbar .nav-links .nav-link,
+  .navbar .nav-links .signup {
+    display: block;
+    margin: 0;
+    padding: 12px 12px 6px;
+    font-family: "GT America Compressed", sans-serif;
+    font-size: clamp(40px, 12vw, 64px);
+    line-height: 1;
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.35s ease,
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .navbar .nav-links .signup {
+    margin-top: 16px;
+    padding: 14px 12px 8px;
+    text-align: center;
+  }
+  .navbar .nav-links.is-open .nav-link,
+  .navbar .nav-links.is-open .signup {
+    opacity: 1;
+    transform: none;
+  }
+  .navbar .nav-links.is-open > :nth-child(2) {
+    transition-delay: 0.04s;
+  }
+  .navbar .nav-links.is-open > :nth-child(3) {
+    transition-delay: 0.08s;
+  }
+  .navbar .nav-links.is-open > :nth-child(4) {
+    transition-delay: 0.12s;
+  }
+  .navbar .nav-links.is-open > :nth-child(5) {
+    transition-delay: 0.16s;
+  }
+  .navbar .nav-links.is-open > :nth-child(n + 6) {
+    transition-delay: 0.2s;
+  }
+}
+
+@media (max-width: 960px) and (prefers-reduced-motion: reduce) {
+  .navbar .nav-links .nav-link,
+  .navbar .nav-links .signup {
+    transform: none;
+    transition: opacity 0.2s ease;
+  }
+}

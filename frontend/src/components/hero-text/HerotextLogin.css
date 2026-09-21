@@ -9,3 +9,27 @@
   font-size: 191px;
   color: #f5f2eaec;
 }
+
+/* Responsive: one line down to tablets, two big lines on phones */
+@media (max-width: 1600px) {
+  .hero-text-login h2 {
+    font-size: 11vw;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 960px) {
+  .hero-text-login {
+    margin-top: 56px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-text-login {
+    margin: 40px 20px 0;
+  }
+  .hero-text-login h2 {
+    font-size: 17.5vw;
+    line-height: 0.92;
+  }
+}

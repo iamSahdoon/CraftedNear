@@ -25,31 +25,36 @@
   margin-top: 45px;
   margin-bottom: 20px;
 }
+.hero-img-container img {
+  max-width: 100%;
+}
 .hr-container2 {
   display: flex;
   justify-content: center;
   margin-left: 12px;
-  margin-bottom: -20px;
+  margin-bottom: max(-20px, -1.05vw);
 }
 
+/* The hero sizes below equal the original px values at 1920px wide and
+   scale down on narrower screens so "CRAFTED NEAR" always fits. */
 .hero-text-container {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: -93px;
+  margin-bottom: max(-93px, -4.92vw);
 }
 
 .italic {
   font-style: italic;
 }
 .m-left {
-  margin-left: 15px;
+  margin-left: min(15px, 0.8vw);
 }
 .hero-section h1 {
   font-family: "GT America Compressed";
   color: #403a34;
-  font-size: 340px;
+  font-size: min(340px, 18vw);
   transition: all 0.3s ease-in-out;
   display: flex;
   cursor: pointer;
@@ -71,6 +76,8 @@ span {
 }
 
 .sub-hero-text-container h2 {
+  /* on narrower screens the rule shrinks, never the text */
+  flex-shrink: 0;
   font-family: "GT America Compressed";
   color: #403a34;
   font-size: 42px;
@@ -131,4 +138,99 @@ span {
 
 .mid-section-3 .stores-near {
   margin-top: 100px;
+}
+
+/* Responsive. .stores is shared with the Storefronts page. */
+@media (max-width: 1640px) {
+  .stores {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 32px 40px;
+  }
+  /* reserve the image's space before it loads, so cards don't jump */
+  .stores .store-wrapper img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 294 / 267;
+    object-fit: cover;
+  }
+  .stores > p {
+    grid-column: 1 / -1;
+  }
+  .stores {
+    align-items: start;
+  }
+}
+
+@media (max-width: 960px) {
+  .hero-img-container {
+    margin: 24px 32px 8px;
+  }
+  .hr-container2 {
+    margin-left: 0;
+  }
+  .sub-hero-text-container {
+    margin: 0 32px;
+  }
+  .sub-hero-text-container h2 {
+    line-height: 1.2;
+    text-align: left;
+  }
+  .sub-hero-text-container hr {
+    flex: 1;
+    width: auto;
+    margin-left: 16px;
+  }
+  .mid-section-1 {
+    margin-top: 64px;
+  }
+  .mid-section-2,
+  .mid-section-3 {
+    margin-top: 32px;
+  }
+  .link .stores-near,
+  .mid-section-3 .stores-near {
+    margin-top: 32px;
+  }
+  .mid-section-1 .stores-near {
+    margin-top: 0;
+  }
+  .stores {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px 16px;
+    margin: 0 32px;
+  }
+  .stores .store-wrapper {
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  /* keep the desktop's spacing proportions around the hero letters */
+  .hero-img-container {
+    margin: 20px 20px 10px;
+  }
+  .hero-text-container {
+    margin-bottom: -3.4vw;
+  }
+  .sub-hero-text-container {
+    margin: 0 20px;
+  }
+  .sub-hero-text-container h2 {
+    font-size: 24px;
+  }
+  .sub-hero-text-container hr {
+    height: 3px;
+    margin-left: 12px;
+  }
+  .stores {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 12px;
+    margin: 0 20px;
+  }
+  /* extra class outranks CustomerProfile.css, which also sets .stores p */
+  .stores .store-wrapper p {
+    padding-top: 4px;
+    font-size: 15px;
+  }
 }

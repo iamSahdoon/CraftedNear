@@ -43,3 +43,91 @@
   margin-left: 90px;
   margin-right: 0px;
 }
+
+/* Responsive: offer cards in a grid, store name above the city */
+@media (max-width: 960px) {
+  .grid-products-profile-offers {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 24px 16px;
+    margin: 0 32px;
+  }
+  .grid-products-profile-offers > p {
+    grid-column: 1 / -1;
+  }
+  /* equal-height cards in a row, prices pinned to the bottom */
+  .grid-products-profile-offers .offer-item {
+    display: flex;
+    flex-direction: column;
+  }
+  .grid-products-profile-offers .offer-border {
+    flex: 1;
+  }
+  .grid-products-profile-offers .offers-product {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .grid-products-profile-offers .o-product-desc {
+    margin-top: auto;
+  }
+  .grid-products-profile-offers .offer-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    padding: 6px 10px;
+    text-align: left;
+  }
+  .grid-products-profile-offers .offer-details p {
+    padding: 0;
+  }
+  .grid-products-profile-offers .offer-details .location {
+    font-size: 16px;
+    opacity: 0.75;
+  }
+  /* reserve the photo's space before it loads, so cards don't jump */
+  .grid-products-profile-offers .offers-product img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 383 / 452;
+    object-fit: cover;
+  }
+  .grid-products-profile-offers .o-desc {
+    padding: 8px 10px 2px;
+  }
+  .grid-products-profile-offers .o-product-desc {
+    padding: 0 10px 8px;
+  }
+  .grid-products-profile-offers .o-product-desc p {
+    padding: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-products-profile-offers {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 12px;
+    margin: 0 20px;
+  }
+  .grid-products-profile-offers .offer-details {
+    padding: 6px 8px;
+  }
+  .grid-products-profile-offers .offer-details p,
+  .grid-products-profile-offers .o-desc {
+    font-size: 16px;
+  }
+  .grid-products-profile-offers .offer-details .location {
+    font-size: 14px;
+  }
+  .grid-products-profile-offers .o-desc {
+    padding: 8px 8px 2px;
+  }
+  .grid-products-profile-offers .o-product-desc {
+    padding: 0 8px 8px;
+  }
+  .grid-products-profile-offers .o-product-desc p {
+    font-size: 15px;
+  }
+}

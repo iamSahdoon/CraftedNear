@@ -39,3 +39,38 @@
   color: #976e3b;
   cursor: pointer;
 }
+
+/* Responsive */
+@media (max-width: 960px) {
+  .stores-near-headers {
+    flex-wrap: wrap;
+    column-gap: 16px;
+    margin: 0 32px;
+  }
+  .stores-near-headers h3 {
+    font-size: 10vw;
+  }
+  .location-right-header .viewall {
+    margin-left: 0;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .stores-near-headers {
+    margin: 0 20px;
+  }
+  .stores-near-headers h3 {
+    font-size: 12.5vw;
+    line-height: 1.1;
+  }
+  .location-icon-wrapper {
+    padding-left: 0;
+  }
+  .location-icon-wrapper p {
+    font-size: 20px;
+  }
+  .location-right-header .viewall {
+    font-size: 18px;
+  }
+}

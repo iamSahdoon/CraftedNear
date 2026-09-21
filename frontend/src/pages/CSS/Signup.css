@@ -110,3 +110,77 @@
   border-radius: 4px;
   text-align: center;
 }
+
+/* Responsive: panels shrink on laptops, stack on tablets and phones */
+@media (max-width: 1540px) {
+  .login-wrapper-signup {
+    padding: 0 32px;
+  }
+  .sell-signup,
+  .cus-signup {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .sell-signup {
+    padding: 34px 5% 80px;
+  }
+  .cus-signup {
+    padding: 0 5%;
+  }
+  .login-wrapper-signup .input-login,
+  .login-wrapper-signup .input-signup {
+    align-self: stretch;
+  }
+  .login-wrapper-signup input,
+  .login-wrapper-signup button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 960px) {
+  .login-wrapper-signup {
+    flex-direction: column;
+    gap: 16px;
+    margin: 32px 0 64px;
+  }
+  .sell-signup,
+  .cus-signup {
+    padding: 24px 24px 32px;
+  }
+  .login-wrapper-signup .sell-signup p,
+  .login-wrapper-signup .cus-signup p {
+    margin-top: 0;
+    padding: 0 0 20px;
+    font-size: 22px;
+  }
+  .input-signup {
+    margin-bottom: 0;
+  }
+  .login-container > .error-message,
+  .login-container > .success-message {
+    margin: 16px 20px 0;
+  }
+  .login-wrapper-signup input,
+  .login-wrapper-signup button {
+    height: 54px;
+  }
+  /* 16px+ stops iPhones zooming in when a field is tapped */
+  .login-wrapper-signup input {
+    padding-left: 16px;
+    font-size: 16px;
+  }
+  .login-wrapper-signup button {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .login-wrapper-signup {
+    padding: 0 20px;
+    margin: 24px 0 48px;
+  }
+  .sell-signup,
+  .cus-signup {
+    padding: 20px 18px 24px;
+  }
+}
