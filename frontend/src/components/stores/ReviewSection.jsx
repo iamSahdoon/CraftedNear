@@ -79,7 +79,7 @@ const ReviewSection = () => {
       <div className="review-container">
         <h3>How are you feeling?</h3>
         <p>
-          Your input and rating is valuable in helping us better understand your
+          Your input and rating is valuable in helping us better understand your{" "}
           <br />
           needs and tailor our service accordingly.
         </p>

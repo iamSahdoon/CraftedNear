@@ -164,3 +164,162 @@
 .reviews-wrapper .reviewer-name {
   padding: 0px;
 }
+
+/* The map banner (rendered by <Map />): keeps Map.css's 1903px cap and is
+   never wider than the page */
+.profile-container > img {
+  max-width: min(100%, 1903px);
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .profile-img-des-wrapper {
+    align-items: flex-start;
+    margin: 32px 32px 0;
+  }
+  .map-wrapper {
+    flex: 0 0 36%;
+  }
+  .map-wrapper img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .profile-img-des-wrapper .store-details {
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* columns collapse to the number of products and centre, like desktop */
+  .profile-container .grid-products-profile {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 220px));
+    justify-content: center;
+    align-items: stretch;
+    gap: 24px 16px;
+    margin: 0 32px;
+  }
+  .profile-container .grid-products-profile > p {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+  /* reserve each photo's space before it loads */
+  .profile-container .grid-products-profile img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 383 / 452;
+    object-fit: cover;
+  }
+  /* offer cards (Offers tab) */
+  .profile-container .grid-products-profile .o-desc {
+    padding: 8px 0 2px;
+    font-size: 18px;
+  }
+  .profile-container .grid-products-profile .o-product-desc p,
+  .profile-container .grid-products-profile .o-points {
+    padding: 0;
+    font-size: 17px;
+  }
+
+  .review-container {
+    padding: 0 32px;
+  }
+  .review-container input[type="text"] {
+    width: 100%;
+    font-size: 16px;
+  }
+  .review-container button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+  }
+  .reviews-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 16px;
+    margin: 48px 32px 0;
+  }
+  .reviews-wrapper > p {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+  .review {
+    max-width: none;
+    max-height: none;
+    padding: 16px;
+  }
+  .store-rating p {
+    font-size: 56px;
+  }
+  .reviews-wrapper .reviewer-comment {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-container > img {
+    display: block;
+    width: 100%;
+    height: 132px;
+    object-fit: cover;
+  }
+
+  /* compact store header: small photo beside the name, details below */
+  .profile-img-des-wrapper {
+    display: grid;
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 0 14px;
+    align-items: center;
+    margin: 24px 20px 0;
+  }
+  .profile-img-des-wrapper .store-details,
+  .profile-img-des-wrapper .store-info-wrapper {
+    display: contents;
+  }
+  .map-wrapper img {
+    width: 88px;
+    height: 88px;
+    object-fit: cover;
+    border: 1px solid rgba(64, 58, 52, 0.2);
+  }
+  .profile-img-des-wrapper .store-des,
+  .profile-img-des-wrapper .store-contact-wrapper {
+    grid-column: 1 / -1;
+  }
+
+  .profile-container .grid-products-profile {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 12px;
+    margin: 0 20px;
+  }
+  .profile-container .grid-products-profile .o-desc {
+    font-size: 16px;
+  }
+  .profile-container .grid-products-profile .o-product-desc p,
+  .profile-container .grid-products-profile .o-points {
+    font-size: 15px;
+  }
+
+  .review-container {
+    padding: 0 20px;
+  }
+  .review-container p br {
+    display: none;
+  }
+  .reviews-wrapper {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 40px 20px 0;
+  }
+  .review {
+    padding: 14px;
+  }
+  .store-rating p {
+    font-size: 48px;
+  }
+  .reviews-wrapper .reviewer-comment {
+    margin-top: 12px;
+    font-size: 15px;
+  }
+}

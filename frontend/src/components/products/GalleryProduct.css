@@ -8,3 +8,27 @@
   font-size: 21px;
   color: #403a34;
 }
+
+/* Responsive (seller gallery page) */
+@media (max-width: 960px) {
+  .profile-container .g-product-desc {
+    flex-wrap: wrap;
+    column-gap: 8px;
+    padding-top: 6px;
+  }
+  .profile-container .g-product-desc p {
+    padding: 0;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-container .g-product-desc {
+    flex-direction: column;
+    gap: 2px;
+  }
+  .profile-container .g-product-desc p {
+    font-size: 16px;
+    text-align: center;
+  }
+}

@@ -33,3 +33,52 @@
 .profile-navbar a:hover {
   filter: brightness(0.97);
 }
+
+/* Responsive: equal-width tabs that shrink with the screen */
+@media (max-width: 1280px) {
+  .profile-navbar {
+    padding: 0 32px;
+  }
+  .profile-navbar button,
+  .profile-navbar button.small-pad,
+  .profile-navbar button.small-pad-2,
+  .profile-navbar button.big-pad {
+    flex: 1 1 0;
+    max-width: 310px;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 960px) {
+  .profile-navbar {
+    align-items: stretch;
+    margin: 40px 0 28px;
+  }
+  .profile-navbar button,
+  .profile-navbar button.small-pad,
+  .profile-navbar button.small-pad-2,
+  .profile-navbar button.big-pad {
+    padding: 10px 8px 8px;
+    font-size: 20px;
+    line-height: 1.15;
+  }
+  /* show which tab is open, in the navbar's tan */
+  .profile-navbar button.active {
+    background-color: #d4a36a;
+    border-color: #403a34;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-navbar {
+    padding: 0 20px;
+    margin: 32px 0 24px;
+  }
+  .profile-navbar button,
+  .profile-navbar button.small-pad,
+  .profile-navbar button.small-pad-2,
+  .profile-navbar button.big-pad {
+    padding: 10px 4px 8px;
+    font-size: 17px;
+  }
+}
