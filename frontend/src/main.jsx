@@ -11,43 +11,50 @@ import SellerProfile_gallery from "./pages/SellerProfile_gallery";
 import CustomerProfile from "./pages/CustomerProfile";
 import StoreContextProvider from "./context/StoreContextProvider";
 import SellerDashboard from "./pages/SellerDashboard";
+import PageTransition from "./components/page-transition/PageTransition";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/stores",
-    element: <Storefront />,
-  },
-  {
-    path: "/aboutus",
-    element: <About />,
-  },
-  {
-    path: "/offers",
-    element: <Offer />,
-  },
-  {
-    path: "/signup",
-    element: <Signup />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/seller/gallery",
-    element: <SellerProfile_gallery />,
-  },
-  {
-    path: "/customer/profile",
-    element: <CustomerProfile />,
-  },
-  {
-    path: "/seller/dashboard",
-    element: <SellerDashboard />,
+    // Layout route: animates each page in as you navigate
+    element: <PageTransition />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/stores",
+        element: <Storefront />,
+      },
+      {
+        path: "/aboutus",
+        element: <About />,
+      },
+      {
+        path: "/offers",
+        element: <Offer />,
+      },
+      {
+        path: "/signup",
+        element: <Signup />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/seller/gallery",
+        element: <SellerProfile_gallery />,
+      },
+      {
+        path: "/customer/profile",
+        element: <CustomerProfile />,
+      },
+      {
+        path: "/seller/dashboard",
+        element: <SellerDashboard />,
+      },
+    ],
   },
 ]);
 
