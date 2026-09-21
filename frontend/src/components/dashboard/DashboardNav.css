@@ -27,3 +27,44 @@
   border-left-color: #333; /* Example active indicator */
   border-left: 5px solid;
 }
+
+/* Responsive */
+@media (max-width: 1640px) {
+  .dashboard-nav button {
+    min-width: min(380px, 26vw);
+    max-width: min(380px, 26vw);
+  }
+}
+
+/* the side menu becomes a grid of tabs above the content */
+@media (max-width: 960px) {
+  .dashboard-nav {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 8px;
+    align-self: stretch;
+  }
+  .dashboard-nav button {
+    min-width: 0;
+    max-width: none;
+    height: auto;
+    min-height: 48px;
+    padding: 10px 6px 8px;
+    color: #403a34;
+    font-size: 16px;
+    line-height: 1.15;
+  }
+  /* show which tab is open, in the navbar's tan */
+  .dashboard-nav button.active {
+    border: 1px solid #403a34;
+    background-color: #d4a36a;
+  }
+}
+
+/* two rows of three once six tabs get too narrow for their labels */
+@media (max-width: 720px) {
+  .dashboard-nav {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

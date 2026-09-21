@@ -211,3 +211,265 @@ tbody tr:hover {
 .remove-favorite-btn:hover {
   background-color: #f32929;
 }
+
+/* Responsive */
+/* touch screens can't hover, so keep the Remove button visible */
+@media (hover: none) {
+  .remove-favorite-btn {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1240px) {
+  /* stop the table and form running into the right edge */
+  .p-table,
+  .customer-update-form {
+    width: calc(100% - 141px);
+  }
+}
+
+@media (max-width: 960px) {
+  .name-logout-wrapper {
+    gap: 24px;
+    margin: 32px 32px 16px;
+  }
+  .name-logout-wrapper p {
+    min-width: 0;
+    padding: 0;
+    font-size: 10vw;
+    line-height: 1;
+    overflow-wrap: anywhere;
+  }
+  .name-logout-wrapper button {
+    flex-shrink: 0;
+    padding: 0;
+  }
+  .name-logout-wrapper button img {
+    display: block;
+    width: 120px;
+    height: auto;
+  }
+  .customer-details-wrapper1,
+  .customer-details-wrapper2 {
+    gap: 4px 24px;
+    margin: 0 32px;
+  }
+  .customer-details-wrapper1 p,
+  .customer-details-wrapper2 p {
+    min-width: 0;
+    padding: 0;
+    font-size: 24px;
+    overflow-wrap: anywhere;
+  }
+
+  .customer-profile-container .stores-near {
+    margin-top: 64px;
+  }
+  .customer-profile-container .stores {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 20px 16px;
+    margin: 0 32px;
+  }
+  .customer-profile-container .stores > p {
+    padding: 0;
+  }
+  .remove-favorite-btn {
+    top: 18px;
+    right: 6px;
+  }
+
+  .trophies-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin: 12px 32px 20px;
+  }
+  .trophies-container .trophie-box {
+    width: auto;
+    height: auto;
+    aspect-ratio: 370 / 320;
+    justify-content: center;
+    gap: 10px;
+    border-width: 4px;
+  }
+  .trophies-container .trophie-box img {
+    width: 56px;
+    height: 56px;
+    margin: 0;
+  }
+  .trophies-container .trophie-box p {
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+  }
+
+  .p-table {
+    width: calc(100% - 64px);
+    margin: 16px 32px 40px;
+  }
+  .p-table th {
+    padding: 12px;
+    font-size: 18px;
+  }
+  .p-table td {
+    padding: 10px 12px;
+    font-size: 16px;
+  }
+
+  /* labels sit above their inputs, two per row */
+  .customer-update-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 16px;
+    width: calc(100% - 64px);
+    margin: 16px 32px 40px;
+  }
+  .customer-update-form .form-header,
+  .customer-update-form .form-inputs {
+    display: contents;
+  }
+  .customer-update-form .form-label {
+    width: auto;
+    margin-bottom: 8px;
+    font-size: 17px;
+  }
+  .customer-update-form .form-label:nth-child(-n + 2) {
+    grid-row: 1;
+  }
+  .customer-update-form .form-inputs input:nth-child(-n + 2) {
+    grid-row: 2;
+  }
+  .customer-update-form .form-label:nth-child(n + 3) {
+    grid-row: 3;
+  }
+  .customer-update-form .form-inputs input:nth-child(n + 3) {
+    grid-row: 4;
+  }
+  .customer-update-form .form-inputs input {
+    width: auto;
+    min-width: 0;
+    margin-bottom: 18px;
+    font-size: 16px;
+    text-overflow: ellipsis;
+  }
+  .form-inputs .password-cus::placeholder {
+    font-size: 15px;
+  }
+  .customer-update-form .update-button {
+    grid-row: 5;
+    grid-column: 1 / -1;
+    font-size: 18px;
+  }
+  .customer-update-form .error-message-cus,
+  .customer-update-form .success-message-cus {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .name-logout-wrapper {
+    gap: 16px;
+    margin: 28px 20px 12px;
+  }
+  .name-logout-wrapper p {
+    font-size: 12.5vw;
+  }
+  .name-logout-wrapper button img {
+    width: 84px;
+  }
+  /* one detail per line */
+  .customer-details-wrapper1,
+  .customer-details-wrapper2 {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 20px;
+  }
+  .customer-details-wrapper2 {
+    margin-top: 4px;
+  }
+  .customer-details-wrapper1 p,
+  .customer-details-wrapper2 p {
+    font-size: 20px;
+  }
+
+  .customer-profile-container .stores-near {
+    margin-top: 48px;
+  }
+  .customer-profile-container .stores {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 12px;
+    margin: 0 20px;
+  }
+  .remove-favorite-btn {
+    width: 68px;
+    height: 28px;
+    font-size: 13px;
+  }
+
+  .trophies-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 8px 20px 16px;
+  }
+  .trophies-container .trophie-box img {
+    width: 48px;
+    height: 48px;
+  }
+  .trophies-container .trophie-box p {
+    font-size: 28px;
+  }
+
+  .p-table {
+    width: calc(100% - 40px);
+    margin: 12px 20px 32px;
+  }
+  .p-table th {
+    padding: 10px 8px;
+    font-size: 15px;
+  }
+  .p-table td {
+    padding: 10px 8px;
+    font-size: 14px;
+    /* long one-word names break only when the screen is too narrow */
+    overflow-wrap: anywhere;
+  }
+
+  /* one field per row */
+  .customer-update-form {
+    grid-template-columns: minmax(0, 1fr);
+    width: calc(100% - 40px);
+    margin: 12px 20px 32px;
+  }
+  .customer-update-form .form-label:nth-child(1) {
+    grid-row: 1;
+  }
+  .customer-update-form .form-inputs input:nth-child(1) {
+    grid-row: 2;
+  }
+  .customer-update-form .form-label:nth-child(2) {
+    grid-row: 3;
+  }
+  .customer-update-form .form-inputs input:nth-child(2) {
+    grid-row: 4;
+  }
+  .customer-update-form .form-label:nth-child(3) {
+    grid-row: 5;
+  }
+  .customer-update-form .form-inputs input:nth-child(3) {
+    grid-row: 6;
+  }
+  .customer-update-form .form-label:nth-child(4) {
+    grid-row: 7;
+  }
+  .customer-update-form .form-inputs input:nth-child(4) {
+    grid-row: 8;
+  }
+  .customer-update-form .form-inputs input {
+    margin-bottom: 16px;
+  }
+  .customer-update-form .update-button {
+    grid-row: 9;
+  }
+}

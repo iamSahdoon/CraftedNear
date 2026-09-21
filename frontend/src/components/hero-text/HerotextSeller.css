@@ -20,3 +20,40 @@ h3 {
   font-weight: 500;
   margin-top: 20px;
 }
+
+/* Responsive */
+@media (max-width: 1640px) {
+  .seller-hero-text h2 {
+    font-size: min(138px, 9vw);
+    line-height: 0.95;
+  }
+}
+
+@media (max-width: 960px) {
+  .seller-hero-text {
+    margin: 48px 32px 0;
+  }
+  .seller-hero-text h2 {
+    font-size: 9.6vw;
+  }
+  .seller-hero-text h3 {
+    margin-top: 12px;
+    font-size: 20px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 600px) {
+  .seller-hero-text {
+    margin: 36px 20px 0;
+  }
+  .seller-hero-text h2 {
+    font-size: 14vw;
+  }
+  .seller-hero-text h3 {
+    font-size: 17px;
+  }
+  .seller-hero-text h3 br {
+    display: none;
+  }
+}
