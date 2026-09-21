@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { StoreContext } from "../../context/StoreContext";
 import PropTypes from "prop-types";
 import mail_button from "../../assets/svgs/mail_btn.png";
-import heart from "../../assets/svgs/heart.svg";
+import heart from "../../assets/svgs/Heart.svg";
 
 const StoreDetails = ({
   storeName,
