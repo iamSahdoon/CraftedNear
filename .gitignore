@@ -30,3 +30,6 @@ build/
 
 # Claude Code (local tooling config)
 .claude/
+
+# Launch video output (/brag)
+brag-output/
